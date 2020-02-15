@@ -1,0 +1,670 @@
+.carousel .carousel-inner .item img {
+    height: 300px;
+}
+/* 通栏轮播图开始 */
+.carousel .carousel-inner .item  {
+    margin-top: 75px;
+    background-position: center center;
+    background-size: cover;  /* 防止该盒子的高度被改变，从而出现留白的现象，设置为cover后，会铺满整个屏幕 */
+}
+.carousel .carousel-inner .item img {
+    width: 100%;
+}
+/* 使用媒体查询，判断当前屏幕的大小，从而给出item盒子的高 */
+@media (min-width:768px){
+    .carousel .carousel-inner .item {
+        height: 410px;
+    }
+}
+.message {
+    margin: 20px 0;
+}
+.message .message_left {
+    margin-top: 15px;
+    width: 50%;
+    height: 430px;
+}
+.message .message_right {
+    width: 48%;
+}
+.panel-heading {
+    padding: 0;
+}
+.message .message_right .media {
+    margin-top: 0;
+}
+.message .message_right .media a:hover {
+    text-decoration: underline;
+}
+.message .message_right .media .media-body p {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.message .message_right .more {
+    display: block;
+    background-color:#004279;
+    width: 100%;
+    height: 40px;
+}
+.message .message_right .more span {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.message .message_right .more a {
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.tail {
+}
+.tail .more {
+    display: block;
+    background-color:#004279;
+    width: 100%;
+    height: 40px;
+}
+.tail .more span {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.tail .more a {
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.tail .tail_left {
+    width: 40%;
+}
+.tail .tail_left .list-group .list-group-item {
+    border: none;
+}
+.tail .tail_left .list-group .list-group-item:first-child {
+    padding-top: 0;
+}
+.tail .tail_right {
+    width: 60%;
+    height: 650px;
+}
+.tail .tail_right .panel {
+    height: 650px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.tail .panel .panel-body p {
+    text-indent:2em;
+    font-size: 16px;
+    line-height: 26px;
+}
+/* 带路峰会 */
+.meeting .more {
+    display: block;
+    background-color: #004279;
+    width: 100%;
+    height: 40px;
+}
+.meeting .more span {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.meeting .more a {
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.meeting .panel-body {
+    padding: inherit;
+}
+.meeting .panel-body .p2_content_map {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /*height: 604px;*/
+    border-bottom: 32px solid #fff;
+    background:url("../images/map.png") no-repeat top center;
+    /*background: url("/img/YIDAI/2017/04/11/images/bg.jpg") no-repeat top center;*/
+}
+
+.meeting .panel-body .xidada {
+    position: absolute;
+    right: 77px;
+    top: 50px;
+    width: 200px;
+    height: 170px;
+}
+.meeting .panel-body .meeting_content {
+    text-align: center;
+    margin-top: 40px;
+}
+.meeting .panel-body .meeting_content h2 {
+    line-height: 50px;
+    font-size: 34px;
+    color: #000;
+    text-shadow: 0 0 1px #004279;
+}
+.meeting .panel-body .meeting_content h2:hover {
+    text-decoration:underline;
+}
+.meeting .panel-body .meeting_content .thumbnail {
+    background: transparent;
+    border: none;
+}
+.meeting .panel-body .meeting_content .row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 30px;
+    position: relative;
+}
+.img_color {
+    position: absolute;
+    left: 68px;
+    top: 3px;
+    width: 242px;
+    height: 200px;
+    background: rgba(0,0,0,0.2);
+}
+.meeting .panel-body .meeting_content .thumbnail img {
+    width: 242px;
+    height: 200px;
+    display: block;
+}
+
+.meeting .panel-body .meeting_content .thumbnail .caption p {
+    text-align: left;
+    text-indent: 2em;
+    font-size: 16px;
+    line-height: 26px;
+}
+.meeting .panel-body .meeting_content .thumbnail .caption a:hover {
+    text-decoration: underline;
+    color: red;
+}
+/* 领导人物 */
+.people .more {
+    display: block;
+    background-color:#004279;
+    width: 100%;
+    height: 40px;
+}
+.people .more span {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.people .more a {
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+
+.people .panel-body  {
+    background: url("../image/bg.jpg") no-repeat top center;
+}
+.demo {
+    width: 1030px;
+    margin: 50px auto;
+}
+.list {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    float: left;
+    overflow: hidden;
+    margin: 20px;
+    position: relative; /* 子绝父相 */
+}
+.list div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(-100deg);
+    -webkit-transform-origin: left top;  /* 改变旋转的原点 */
+    -webkit-transition: -webkit-transform 0.8s;  /* 谁做动画，谁添加 */
+}
+/*.list:hover div {
+    -webkit-transform: rotate(0deg);
+}*/
+
+/* 根据鼠标移入的方向不同，可以总结为上下左右四个方向，分别对应四种写法 */
+.current div {
+    -webkit-transform: rotate(0deg);
+}
+.list div.top {
+    -webkit-transform-origin: top left;
+}
+.list div.right {
+    -webkit-transform-origin: top right;
+}
+.list div.bottom {
+    -webkit-transform-origin: bottom right;
+}
+.list div.left {
+    -webkit-transform-origin: bottom left;
+}
+
+/* 广西带路 */
+.guangxi .more {
+    display: block;
+    background-color: #004279;
+    width: 100%;
+    height: 40px;
+}
+.guangxi .more span {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.guangxi .more a {
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+/*
+.guangxi .panel .panel-body {
+    padding-left: 45px;
+}*/
+.guangxi .panel .panel-body .nav li .li_bg {
+    height: 66px;
+    line-height: 66px;
+    background-color: #004279;
+    border-radius: 6px;
+    padding-left: 15px;
+    position: relative;
+}
+.guangxi .panel .panel-body .nav li .li_bg .small_bg{
+    width:0;
+    height:0;
+    border-width:15px;
+    border-style:solid;
+    border-color:transparent;
+    border-right-color: #004279;
+    position: absolute;
+    left: -27px;
+    top: 17px;
+}
+.guangxi .panel .panel-body .nav li.active a {
+    color: #fff;
+}
+
+.bd-dynamic-news, .bd-dynamic-topic {
+    font-size: 1.7rem;
+    color: #505050;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    text-align: left;
+}
+.news-list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+.news-item {
+    display: table-row;
+    width: 100%;
+    margin: 0 0.5rem;
+}
+.decoration {
+    display: table-cell;
+    width: 10%;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+.news-circle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+}
+.solid-circle {
+    background: #ccc;
+    border-radius: 50%;
+    width: 0.6rem;
+    height: 0.6rem;
+    overflow: hidden;
+    margin: 0.3rem;
+}
+.decoration:before,
+.decoration:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 50%;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.news-item:nth-child(1) .decoration:before {
+    display: none;
+}
+
+.news-item:nth-last-child(1) .decoration:after {
+    display: none;
+}
+
+.decoration:before {
+    top: 0;
+}
+
+.decoration:after {
+    bottom: 0;
+}
+
+.decoration {
+    display: table-cell;
+    width: 10%;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.news-item:hover .news-box {
+    background-color: #004279;
+    color: #fff;
+}
+
+.news-item:hover .news-box:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #004279;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.news-item:hover .solid-circle {
+    background:#004279;
+}
+
+.news-item .news-title {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.news-item:hover .news-title {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.news-item:hover .news-time {
+    color: #fff;
+}
+
+.news-box {
+    display: table-cell;
+    line-height: 3rem;
+    width: 80%;
+    vertical-align: middle;
+    color: #000;
+    padding-left: 15px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.bd-dynamic-topic .item {
+    margin: 0;
+    display: block;
+}
+
+.item {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.item .img-outer {
+    padding-bottom: 73.5%;
+}
+
+.item .card-img {
+    width: 100%;
+    height: 100%;
+}
+
+.item:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    color: #333;
+}
+
+.item:hover .card-img-bottomlay {
+    color: #000000;
+}
+
+.card-img-bottomlay {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 4rem;
+    color: #666666;
+}
+
+.bd-dynamic-timeline {
+    float: left;
+    margin-top: 3.5rem;
+    /* margin-left: 4.5rem;*/
+    padding: 1px 3px;
+    overflow: hidden;
+}
+
+.bd-dynamic-timeline li {
+    position: relative;
+    list-style-type: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 4.3rem;
+    /* border: 1px #666 solid; */
+    border-radius: 100%;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 #999999;
+}
+
+.bd-dynamic-timeline li span {
+    display: block;
+    border-radius: 100%;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #c0c0c0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.bd-dynamic-event {
+    float: left;
+    width: 81%;
+    margin-top: 1.6rem;
+}
+
+.bd-dynamic-event div {
+    padding: 1.3rem 0 1.3rem 1.8rem;
+    font-size: 1.3rem;
+    color: #333333;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.jw{
+	display: block;
+    background-color:wheat;
+    width: 100%;
+    height: 100px;
+}
+
+.jw span{
+	    font-size: 36px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.jw a{
+	display: block;
+	line-height: 100px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	
+}
+.jw a:hover{
+	color: cornflowerblue;
+}
+
+.ks{
+	display: block;
+    background-color:burlywood;
+    width: 100%;
+    height: 100px;
+}
+
+.ks span{
+	    font-size: 36px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.ks a{
+	display: block;
+	line-height: 100px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	
+}
+.ks a:hover{
+	color: cornflowerblue;
+}
+
+.zy{
+	display: block;
+    background-color:yellowgreen;
+    width: 100%;
+    height: 100px;
+}
+
+.zy span{
+	    font-size: 36px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.zy a{
+	display: block;
+	line-height: 100px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	
+}
+.zy a:hover{
+	color: cornflowerblue;
+}
+
+.js{
+	display: block;
+    background-color:sandybrown;
+    width: 100%;
+    height: 100px;
+}
+
+.js span{
+	    font-size: 36px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.js a{
+	display: block;
+	line-height: 100px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	
+}
+.js a:hover{
+	color: cornflowerblue;
+}
+
+.pyfa{
+	display: block;
+    background-color:burlywood;
+    width: 100%;
+    height: 100px;
+}
+
+.pyfa span{
+	    font-size: 36px;
+    color: #fff;
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.pyfa a{
+	
+	display: block;
+	line-height: 100px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	
+}
+.pyfa a:hover{
+	color: cornflowerblue;
+}
+
+
+
+

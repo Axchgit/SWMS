@@ -1,0 +1,76 @@
+.content {
+    margin-top: 80px;
+}
+.content .content-left {
+    margin-top: 65px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+.content .content-left .text_content {
+    width: 100%;
+    margin: 0 auto;
+}
+.content .content-left .text_content h1 {
+    font-family: Helvetica,"Microsoft YaHei", Arial, sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    color: #024576;
+    margin-top: 20px;
+}
+.content .content-left .text_content span {
+    border-top: 1px solid #e0e0e0;
+    display: block;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-top: 3px;
+    color: #024576;
+}
+.content .content-left .text_content span a {
+    color: red;
+}
+.content .content-left .text_content .txt {
+    margin-top: 20px;
+}
+/*
+.content .content-left .text_content .txt p:first-child,
+.content .content-left .text_content .txt p:last-child,
+.content .content-left .text_content .txt p img
+{
+    margin-bottom: 20px;
+}*/
+.content .content-left .text_content .txt p img
+{
+    margin-bottom: 20px;
+}
+.content .content-left .text_content .txt .playerActTitle {
+    text-align: left;
+    font-size: 16px;
+    line-height: 200%;
+    padding-bottom: 20px;
+    text-indent: 2em;  /* 首行缩进 */
+}
+.content .content-right {
+    margin-top: 65px;
+}
+.list-group-item.disabled,
+.list-group-item.disabled:hover,
+.list-group-item.disabled:focus {
+    color: #fff;
+    cursor: not-allowed;
+    background-color: #004279;
+    height: 37px;
+    width: 100%;
+    line-height: 37px;
+}
+.list-group-item:first-child {
+    padding: 0;
+    padding-left: 10px;
+    font-size: 18px;
+}
+.content-right .list-group .media {
+    margin-top: 0;
+}
+.content-right .list-group .media .media-body a:hover {
+    text-decoration: underline;
+    color: #E92322;
+}

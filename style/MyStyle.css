@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { padding:0; margin:0;}       /*设置所有对像的内边距为0*/
+body { text-align:center;}      /*设置页面居中对齐*/
+#photo-list {
+/* 6张图片的宽度（包含宽度、padding、border、图片间的留白）
+计算：6*(100+2*2+1*2+9) - 9 
+之所以减去9是第6张图片的右边留白 */
+   width:681px;  
+/* 图片的宽度（包含高度、padding、border）
+   计算：100+2*2+1*2  */ 
+    height:106px;  
+    margin:50px auto; 
+ overflow:hidden;     /*溢出部份将被隐藏*/ 
+    border:1px dashed #ccc;  
+}  
+#photo-list ul { list-style:none;}  
+#photo-list li { float:left; padding-right:9px;}  
+#photo-list img { border:1px solid #ddd; background:#fff; padding:2px;}
+对应文件内容如图所示：

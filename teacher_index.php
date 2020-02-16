@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>教师中心</title>  
+  <link rel="icon" href="images/teacher.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="css/pintuer.css">
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>   
@@ -20,7 +21,8 @@ session_start();
   <div class="logo margin-big-left fadein-top">
     <div style="float:left;"><h1><img src="images/teacher.jpg" class="radius-circle rotate-hover" height="60" alt="" />教师中心</h1></div>
   </div>
-  <div style="float:right;" class="head-l"><!--<a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;--><!--<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;--><a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+  <div style="float:right;" class="head-l"><!--<a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;--><!--<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;-->
+  <a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
@@ -63,8 +65,16 @@ $(function(){
   })
 });
 </script>
+<?php
+include('conn.php');
+// echo$_SESSION['yh'];
+// die();
+      $sql = "select * from teacher where tea_number = {$_SESSION['yh']}";
+        $result = $link->query($sql);
+        $row = $result->fetch_assoc();
+?>
 <ul class="bread">
-  <li style="color:#F00; font-size:20px; font-weight:bold"><?php echo @$_SESSION['yh'] ?></span>老师&nbsp;&nbsp;<span style="color:#000000">欢迎您!!!</span></li>
+  <li style="color:#F00; font-size:20px; font-weight:bold"><?php echo @$row['name'] ?></span>老师&nbsp;&nbsp;<span style="color:#000000">欢迎您!!!</span></li>
 </ul>
  <div class="admin">
         <iframe scrolling="auto" rameborder="0" src="teacher_course_info.php" name="right" width="100%" height="100%"></iframe>

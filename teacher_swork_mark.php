@@ -12,33 +12,28 @@
 <script src="js/pintuer.js"></script>
 </head>
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
-<form name="" method="post" enctype="multipart/form-data">
+<!-- <form name="" method="post" enctype="multipart/form-data"> -->
 
 <div class="panel admin-panel">
  
   <div class="body-content">
-    <form method="post" class="form-x" action="xga_s.php?xgid=<?php echo $id?>">  
+    <form method="post" class="form-x" enctype="multipart/form-data">  
       <div class="form-group">
         <div class="label">
           <label>分数：</label>
         </div>
         <div class="field">
           <input type="text" class="input w50" placeholder="1-100" name="score"  />
-          <div class="tips"></div>
-        </div>
-      </div>
-    
-      
-      
-      
-        <div align="center" class="field">
           <button name="up" class="button bg-main icon-check-square-o" type="submit"> 提交</button>
         </div>
+      </div>
+         
+
       
     </form>
   </div>
 </div>
-</form>
+<!-- </form> -->
 
 </body></html>
 

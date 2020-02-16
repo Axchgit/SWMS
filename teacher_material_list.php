@@ -72,7 +72,8 @@ $sql = "select * from course_material where tea_number=$tno";
     
     <!--<td align="center"><?php echo $row['pw']?></td>-->
     <!--<td align="center"><?php echo $row['select_course']?></td>-->	
-    <td align="center"><a href="del.php?id=<?php echo $row['id']?>&del=course_material&address=<?php echo $row['address']?>" onClick="return confirm('真的要删除吗？')">删除</a>|<a href="<?php echo $row['address']?>">下载</a></td>	
+    <td align="center"><a href="del.php?id=<?php echo $row['id']?>&del=course_material&address=<?php echo $row['address']?>" onClick="return confirm('真的要删除吗？')"><button class="button_new button_red">删除</button></a>
+    <a href="<?php echo $row['address']?>"><button class="button_new button_blue">下载</button></a></td>	
   </tr>
   <?php 
         } 

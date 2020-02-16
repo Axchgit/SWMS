@@ -74,7 +74,7 @@ $sql = "select c.*
     
     <!--<td align="center"><?php echo $row['pw']?></td>-->
     <!--<td align="center"><?php echo $row['select_course']?></td>-->	
-    <td align="center"><a href="<?php echo $row['address']?>">下载</a></td>	
+    <td align="center"><a href="<?php echo $row['address']?>"><button class="button_new button_blue">下载</button></a></td>	
   </tr>
   <?php 
         } 

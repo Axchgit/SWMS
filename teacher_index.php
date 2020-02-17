@@ -24,7 +24,7 @@
         <h1><img src="images/teacher.jpg" class="radius-circle rotate-hover" height="60" alt="" />教师中心</h1>
       </div>
     </div>
-    <div style="float:right;" class="head-l">
+    <div style="float:right; margin-right:5%" class="head-l">
       <!--<a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;-->
       <!--<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;-->
       <a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
@@ -48,8 +48,8 @@
       <li><a href="teacher_student_list.php" target="right"><span class="icon-caret-right"></span>学生评分</a>
       <li><a href="teacher_work_upload.php" target="right"><span class="icon-caret-right"></span>作业发布</a>
       <li><a href="teacher_material_upload.php" target="right"><span class="icon-caret-right"></span>上传资料</a>
-      <!-- <li><a href="teacher_swork_list.php" target="right"><span class="icon-caret-right"></span>作业批改</a> -->
       <li><a href="teacher_swork_list.php" target="right"><span class="icon-caret-right"></span>作业批改</a>
+      <!-- <li><a href="delete_test.php" target="right"><span class="icon-caret-right"></span>删除测试</a> -->
 
     </ul>
 

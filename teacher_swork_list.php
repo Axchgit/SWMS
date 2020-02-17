@@ -33,7 +33,7 @@
     where a.tea_number=b.tea_number and b.course_number=c.course_number and a.tea_number=$yh";
         $result = $link->query($sql);
 
-        $sql1 = "select c.wname,c.twork_id,count(*) as sum
+        $sql1 = "select c.wname,b.name,c.twork_id,count(*) as sum
     from teacher a,course b,student_work c
     where a.tea_number=b.tea_number and b.course_number=c.course_number and a.tea_number=$yh group by wname";
         $result1 = $link->query($sql1);
@@ -91,7 +91,7 @@
                         </div>
                     </td>
                     <td align="center">
-                        <a href="del.php?id=<?php echo $row['twork_id'] ?>&del=teacher_work&address=<?php echo $row['address'] ?>" onClick="return confirm('真的要删除吗？')"><button class="button_new button_red">删除</button></a>
+                        <a href="teacher_work_delete.php?wid=<?php echo $row['twork_id'] ?>&wname=<?php echo $row['wname'] ?>&cname=<?php echo $row['name'] ?>" onClick="return confirm('本操作会删除所有本作业学生提交文档及教师提交文档，是否继续？')"><button class="button_new button_red">删除</button></a>
                     </td>
                 </tr>
             <?php } ?>

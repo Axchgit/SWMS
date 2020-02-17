@@ -30,18 +30,10 @@
           </div>
         </div>
     </div>
-
-
-
     </form>
-  </div>
-  </div>
 
-</body>
 
-</html>
-
-<?php
+  <?php
 session_start();
 @$yh = $_SESSION['yh'];
 include("conn.php");
@@ -67,6 +59,8 @@ if (isset($_POST['up'])) {
 
   $rs = $link->query($sql1);
 ?>
+    <div class="panel-head"><strong class="icon-reorder">查询结果</strong></div>
+
   <form method="post" class="form-x" action="student_select_course.php" enctype="multipart/form-data">
 
     <table class="table table-hover text-center">
@@ -93,8 +87,6 @@ if (isset($_POST['up'])) {
           <div align="center">选择</div>
         </td>
       </tr>
-      <tr>
-        <td>
           <?php
           while ($row = $rs->fetch_assoc()) {
           ?>
@@ -137,18 +129,14 @@ if (isset($_POST['up'])) {
 <tr>
   <td colspan="7" align="center"><input type="submit" class="button border-green" value="提交" /></td>
 </tr>
-<tr>
-  <!--<td colspan="8"><div class="pagelist"> <a href="?page=<?php echo $page - 1 ?>">上一页</a> <span class="current">1</span><a href="?page=<?php echo $page + 1 ?>">下一页</a><a href="?page=<?php echo $maxpage ?>">尾页</a> </div></td>-->
-</tr>
     </table>
-
-    </div>
   </form>
-
-  </body>
-
-  </html>
 <?php
 }
 
 ?>
+  </div>
+</body>
+
+</html>
+

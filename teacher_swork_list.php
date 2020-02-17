@@ -12,18 +12,46 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <style type="text/css">
+        .container {
+            margin-top: 130px;
+        }
+
+
+        #xszimg {
+            position: absolute;
+            display: none;
+            text-align: center;
+            padding: 10px 100px;
+            width: 70%;
+            height: 10%;
+            left: 100px;
+            background:#bbd2e4;
+            border-radius: 10px;
+        }
+
+        #xszimg::before {
+            content: "";
+            position: relative;
+            top: -20px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            display: block;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #bbd2e4;
+        }
+    </style>
 </head>
 
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
 
-    <!-- <form method="post" action=""> -->
     <div class="panel admin-panel">
-        <div onclick="table_one()" ondblclick="table_double()" class="panel-head"><strong class="icon-reorder">学生作业批改</strong></div>
-
+        <div class="panel-head"><strong class="icon-reorder" onclick="table_one()" ondblclick="table_double()">学生作业批改</strong></div>
         <?php
         session_start();
         @$yh = $_SESSION['yh'];
-
         include("conn.php");
         include("function.php");
         $fc = new func;
@@ -32,24 +60,23 @@
     from teacher a,course b,student_work c
     where a.tea_number=b.tea_number and b.course_number=c.course_number and a.tea_number=$yh";
         $result = $link->query($sql);
-
+        //查询已提交作业人数
         $sql1 = "select c.wname,b.name,c.twork_id,count(*) as sum
     from teacher a,course b,student_work c
     where a.tea_number=b.tea_number and b.course_number=c.course_number and a.tea_number=$yh group by wname";
         $result1 = $link->query($sql1);
-
+        //查询选秀本门课程全部人数
         $sql3 = "select count(*) as all_num
-    	from student a,course b,score c,teacher t
-    	where a.stu_number=c.stu_number and c.course_number=b.course_number and b.tea_number=t.tea_number and t.tea_number=$yh";
+    from student a,course b,score c,teacher t
+    where a.stu_number=c.stu_number and c.course_number=b.course_number and b.tea_number=t.tea_number and t.tea_number=$yh";
         $result2 = $link->query($sql3);
         $row_all = $result2->fetch_assoc()
-
         ?>
 
-        <table id="talbe" class="table table-hover text-center">
-            <tr>
-                <td width="100">
-                    <div align="center">作业名称</div>
+        <table id="talbe"  class="table table-hover text-center">
+            <tr id="xsztip">
+                <td  width="100">
+                    <div  align="center">作业名称</div>
                 </td>
                 <td width="100">
                     <div align="center">已提交人数</div>
@@ -69,7 +96,7 @@
             while ($row = $result1->fetch_assoc()) {
 
             ?>
-                <tr ondblclick="double()" onclick="one('<?php echo $row['twork_id'] ?>','<?php echo $row['wname'] ?>')">
+                <tr id="xsztip" onclick="one('<?php echo $row['twork_id'] ?>','<?php echo $row['wname'] ?>')">
                     <td width="100">
                         <div>
                             <h3 style="color: green;font-weight:bolder"><?php echo $row['wname'] ?></h3>
@@ -96,14 +123,19 @@
                 </tr>
             <?php } ?>
         </table>
-
-
-
-
+    <div >
+        <div id="xszimg">
+            <h2 style="color: white;font-weight:bolder"><span>提示：点击相应作业条目,即可显示学生提交列表</span></h2>
+        </div>
+    </div>
 
         <script>
             function one(wid, wname) {
-                document.getElementById('demo').style.display = 'block';
+                if (document.getElementById('demo').style.display == 'none') {
+                    document.getElementById('demo').style.display = 'block';
+                } else {
+                    document.getElementById('demo').style.display = 'none';
+                }
                 document.getElementById('demo').src = "teacher_student_work?wid=" + wid + "&wname=" + wname;
                 // alert(document.getElementById('demo').src);
             }
@@ -114,17 +146,38 @@
                 // alert(document.getElementById('demo').src);
             }
 
-            function double() {
-                document.getElementById('demo').style.display = 'none';
-                // document.getElementById('demo').src = "teacher_student_list?sno=1";
-            }
-
             function table_double() {
                 document.getElementById('table').style.display = 'block';
                 // document.getElementById('demo').src = "teacher_student_work?wid=" + wid + "&wname=" + wname;
                 // alert(document.getElementById('demo').src);
             }
         </script>
+        
+    <script type="text/javascript">
+        $(function() {
+            $("#xsztip").hover(function() {
+                show_xszimg(this);
+            }, function() {
+                show_xszimg();
+            });
+
+            function show_xszimg(f) {
+                var d = $("#xszimg");
+                if (!f) {
+                    d.fadeOut()
+                } else {
+                    var c = $(f);
+                    var e = c.offset();
+                    var a = e.left;
+                    var b = e.top + 44;
+                    d.css({
+                        left: a + "px",
+                        top: b + "px"
+                    }).show();
+                }
+            }
+        });
+    </script>
 
 
 

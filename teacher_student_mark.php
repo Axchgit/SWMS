@@ -23,7 +23,7 @@
               <label>分数：</label>
             </div>
             <div class="field">
-              <input type="text" class="input w50" placeholder="1-100" name="grade" />
+              <input type="text" class="input w50" placeholder="1~100" name="grade" />
               <div class="tips"></div>
               <button name="up" class="button bg-main icon-check-square-o" type="submit"> 提交</button>
             </div>
@@ -38,7 +38,6 @@
               alert("分数必须为1~100");
               return false;
             }
-
           }
         </script>
 
@@ -47,14 +46,21 @@
 </html>
 
 <?php
-
+session_start();
+$tno = $_SESSION['yh'];
 include("conn.php");
 include("function.php");
 $fc = new func;
 if (isset($_POST['up'])) {
   $stu = $_GET['sno'];
   $grade = $_POST['grade'];
-  $sql = "update score set grade='$grade' where stu_number='$stu'";
+$sql1 = "select course_number from course where tea_number = $tno";
+$result = $link->query($sql1);
+
+$row = $result->fetch_assoc();
+
+
+  $sql = "update score set grade=$grade where stu_number=$stu and course_number={$row['course_number']}";
   $rs = $link->query($sql);
   if ($rs == true) {
     $fc->alrt("评分/修改 成功！", "teacher_student_list.php");

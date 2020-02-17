@@ -69,12 +69,18 @@ if (isset($_POST['up'])) {
   $mname = $_POST['mname'];
   $datetime = date("Y-m-d H:i:s", time());
   //		$tno = $_SESSION['yh'];
+
+  //根据课程名称创建文件夹，存放本课程教师上传作业文件
+  $teacher_file = './files/course_material/' . $cname;
+  if (!is_dir($teacher_file)) {
+    mkdir($teacher_file);
+  }
   //文件上传操作
   $arr = $_FILES['workfile'];
   $arr['tmp_name'];
   //TODO: TIP:截取 . 后面的字符
   $suffix = strrchr($arr['name'], '.');
-  $address = "./files/course_material/" . $cname
+  $address = $teacher_file.'/' . $cname
     . '-课程资料' . '-' . $mname . '-' . $tea_name . $suffix;
   move_uploaded_file($arr['tmp_name'], $address);
   // $address="./files/course_material/".$arr['name'];

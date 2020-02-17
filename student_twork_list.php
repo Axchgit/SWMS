@@ -15,17 +15,8 @@
 
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
 
-  <!-- <form method="post" action="select_save.php"> -->
   <div class="panel admin-panel">
     <div class="panel-head"><strong class="icon-reorder">课程作业</strong></div>
-    <!--    <div class="padding border-bottom">
-      <ul class="search">
-        <li>
-          <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
-          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
-        </li>
-      </ul>
-    </div-->
     <?php
     session_start();
     @$yh = $_SESSION['yh'];

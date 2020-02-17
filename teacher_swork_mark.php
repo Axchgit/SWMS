@@ -14,10 +14,7 @@
 </head>
 
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
-  <!-- <form name="" method="post" enctype="multipart/form-data"> -->
-
   <div class="panel admin-panel">
-
     <div class="body-content">
       <form name="myForm" onsubmit="return validateForm()" method="post" class="form-x" enctype="multipart/form-data">
         <div class="form-group">
@@ -36,22 +33,17 @@
               alert("分数必须为1~100");
               return false;
             }
-
           }
         </script>
-
-
       </form>
     </div>
   </div>
-  <!-- </form> -->
 
 </body>
 
 </html>
 
 <?php
-
 include("conn.php");
 include("function.php");
 $wid = $_GET['wid'];
@@ -68,5 +60,4 @@ if (isset($_POST['up'])) {
     $fc->alrt("评分/修改 失败！", "teacher_student_work.php?wid=$wid&wname=$wname");
   }
 }
-
 ?>

@@ -71,12 +71,9 @@
             <div align="center">退选</div>
           </td>
         </tr>
-
-
         <?php
         while ($row = $rs->fetch_assoc()) {
         ?>
-
           <tr>
             <td align="center"><?php echo $row['course_number'] ?></td>
             <td align="center"><?php echo $row['name'] ?></td>
@@ -106,6 +103,8 @@
         <?php
         }
         ?>
+      </table>
+      <table class="table table-hover text-center">
         <tr>
           <td colspan="7" align="center"><input type="submit" class="button border-green" value="退选" /></td>
         </tr>

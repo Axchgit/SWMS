@@ -15,17 +15,8 @@
 
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
 
-  <!-- <form method="post" action="select_save.php"> -->
   <div class="panel admin-panel">
     <div class="panel-head"><strong class="icon-reorder">上交作业列表</strong></div>
-    <!--    <div class="padding border-bottom">
-      <ul class="search">
-        <li>
-          <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
-          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
-        </li>
-      </ul>
-    </div-->
     <?php
     session_start();
     @$yh = $_SESSION['yh'];
@@ -62,12 +53,6 @@
         <td width="100">
           <div align="center">上传时间</div>
         </td>
-        <!--<td width="100"><div align="center">专业</div></td>
-    <td width="100"><div align="center">班级</div></td>
-    <td width="100"><div align="center">分数</div></td>-->
-
-        <!--<td width="100"><div align="center">密码</div></td>-->
-        <!--<td width="100"><div align="center">选修课程</div></td>-->
         <td width="100">
           <div align="center">操作</div>
         </td>
@@ -99,8 +84,6 @@
             </td>
           <?php  } ?>
           <td align="center"><?php echo $row['uploaddate'] ?></td>
-          <!--<td align="center"><?php echo $row['pw'] ?></td>-->
-          <!--<td align="center"><?php echo $row['select_course'] ?></td>-->
           <td align="center"><a href="del.php?id=<?php echo $row['id'] ?>&del=student_work&address=<?php echo $row['address'] ?>" onClick="return confirm('真的要删除吗？')"><button class="button_new button_red">删除</button></a>
             <a href="<?php echo $row['address'] ?>"><button class="button_new button_blue">下载</button></a>
           </td>
@@ -111,7 +94,6 @@
       ?>
     </table>
   </div>
-  <!-- </form> -->
 
 </body>
 

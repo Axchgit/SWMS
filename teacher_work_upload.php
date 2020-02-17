@@ -84,7 +84,7 @@ if (isset($_POST['up'])) {
   $datetime = date("Y-m-d H:i:s", time());
 
   $deadline = $_POST['deadline'];
-  //		$tno = $_SESSION['yh'];
+  //$tno = $_SESSION['yh'];
   //根据课程及作业名创建文件夹双层目录，存放学生上传作业
   $cname_file = './files/student_work/' . $cname;
   if (!is_dir($cname_file)) { 
@@ -106,15 +106,11 @@ if (isset($_POST['up'])) {
   $address = $teacher_file.'/' . $cname
     . '-' . $wname . '-' . $tea_name . $suffix;
   move_uploaded_file($arr['tmp_name'], $address);
-  // $address = "./files/teacher_work/" . $arr['name'];
-  // move_uploaded_file($arr['tmp_name'], $address);
   //获取课程号
   $sql1 = "select course_number from `course` where tea_number=$tno";
   $data = $link->query($sql1);
   foreach ($data as $v);
-
   $cno = $v['course_number'];
-
   $sql = "INSERT INTO teacher_work (`wname`,`course_number`,`tea_number`,`address`,`deadline`,`uploaddate`)
 	VALUES ('$wname', '$cno', '$tno', '$address','$deadline', '$datetime')";
   $result = $link->query($sql);

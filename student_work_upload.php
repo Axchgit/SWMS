@@ -73,25 +73,22 @@ if (isset($_POST['up'])) {
   $row_name = $data_name->fetch_assoc();
 
   $wname = $_POST['wname'];
-  // $wname = $_GET['wname'];
   $course_number = $_POST['course_number'];
+  //根据课程号查询课程名称
   $sql_course = "select * from course where course_number = $course_number";
   $data_course = $link->query($sql_course);
   $row_course = $data_course->fetch_assoc();
-  // $course_number = $_GET['cno'];
-  $wid = $_GET['id'];
 
+  $wid = $_GET['id'];
   $datetime = date("Y-m-d H:i:s", time());
-  // $worktime = date("H:i:s", time());
-  //		$tno = $_SESSION['yh'];
   //文件上传操作
   $arr = $_FILES['workfile'];
   $arr['tmp_name'];
   //TODO: TIP:截取 . 后面的字符
   $suffix = strrchr($arr['name'], '.');
+  //学生上传文档自动命名格式：学号-课程名-作业名-作业id.后缀
   $address = "./files/student_work/" .$row_course['name'].'/'.$wname.'/'. $sno
     . '-' . $row_name['name'] . '-' . $wname . '-' . $wid . $suffix;
-
   move_uploaded_file($arr['tmp_name'], $address);
 
   $sql2 = "select * from student where stu_number=$sno";

@@ -29,8 +29,8 @@
       $row = $rs->fetch_assoc();
       // $r=$row['select_course'];
       $sql3 = "select c.course_number 
-    			from student a,course b,score c
-    			where a.stu_number=c.stu_number and c.course_number=b.course_number and a.stu_number=$yh";
+    from student a,course b,score c
+    where a.stu_number=c.stu_number and c.course_number=b.course_number and a.stu_number=$yh";
       $data = $link->query($sql3);
       foreach ($data as $vv) :
         @$cno[] = $vv['course_number'];
@@ -77,21 +77,15 @@
             <td align="center"><?php echo $row['term'] ?></td>
             <td align="center"><?php echo $row['department'] ?></td>
             <td align="center">
-
               <?php
               if (@$cno != null) {
                 if (in_array($row['course_number'], @$cno)) {
-                  ?>
-                  <button class="button_new button_green" style="background-color: #54c96d;color:white;cursor: not-allowed" disabled="disabled">已选</button>
-
-              <?php
-
-                  // echo "已选";
-                } else {
               ?>
+                  <button class="button_new button_green" style="background-color: #54c96d;color:white;cursor: not-allowed" disabled="disabled">已选</button>
+                <?php
+                } else {
+                ?>
                   <input type='checkbox' name='kec[]' value='<?php echo $row['course_number'] ?>' />
-
-
             </td>
           </tr>
         <?php
@@ -99,7 +93,6 @@
               } else {
         ?>
         <input type='checkbox' name='kec[]' value='<?php echo $row['course_number'] ?>' />
-
     <?php
               }
             }
@@ -107,48 +100,11 @@
     <tr>
       <td colspan="7" align="center"><input type="submit" class="button border-green" value="提交" /></td>
     </tr>
-    <tr>
-      <!--<td colspan="8"><div class="pagelist"> <a href="?page=<?php echo $page - 1 ?>">上一页</a> <span class="current">1</span><a href="?page=<?php echo $page + 1 ?>">下一页</a><a href="?page=<?php echo $maxpage ?>">尾页</a> </div></td>-->
-    </tr>
       </table>
       <?php
-
       ?>
     </div>
   </form>
-  <script type="text/javascript">
-    function del(id) {
-      if (confirm("您确定要删除吗?")) {
-
-      }
-    }
-
-    $("#checkall").click(function() {
-      $("input[name='id[]']").each(function() {
-        if (this.checked) {
-          this.checked = false;
-        } else {
-          this.checked = true;
-        }
-      });
-    })
-
-    function DelSelect() {
-      var Checkbox = false;
-      $("input[name='id[]']").each(function() {
-        if (this.checked == true) {
-          Checkbox = true;
-        }
-      });
-      if (Checkbox) {
-        var t = confirm("您确认要删除选中的内容吗？");
-        if (t == false) return false;
-      } else {
-        alert("请选择您要删除的内容!");
-        return false;
-      }
-    }
-  </script>
 </body>
 
 </html>

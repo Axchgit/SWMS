@@ -87,23 +87,21 @@
             <td align="center"><?php echo $row['department'] ?></td>
             <td align="center"><?php echo $row['specialty'] ?></td>
             <td align="center"><?php echo $row['class'] ?></td>
-            <?php if ($row['grade'] >= 60) { ?>
+            <!-- 分数外观显示判断 -->
+            <?php if ($row['grade'] == NULL) { ?>
+              <td align="center" style="color:yellowgreen;font-weight:bolder">
+                待评分
+              </td>
+            <?php } elseif ($row['grade'] >= 60) { ?>
               <td align="center" style="color: green;font-weight:bolder">
-
                 <?php echo $row['grade'] ?>
-
               </td>
             <?php } else { ?>
-              <td align="center" style="color: red;font-weight:bolder" >
-
+              <td align="center" style="color: red;font-weight:bolder">
                 <?php echo $row['grade'] ?>
-
               </td>
-            <?php } ?>
-
-            <?php ?>
-            <!--<td align="center"><?php echo $row['pw'] ?></td>-->
-            <!--<td align="center"><?php echo $row['select_course'] ?></td>-->
+            <?php  } ?>
+            
             <td align="center"><a href="teacher_student_mark.php?sno=<?php echo $row['stu_number'] ?>"><button class="button_new button_green">评分</button></a>
               <a href="teacher_student_cancel.php?sno=<?php echo $row['stu_number'] ?>&cno=<?php echo  $row['course_number'] ?>" onClick="return confirm('确定使其退选吗？')"><button class="button_new button_red">退课</button></a></td>
           </tr>

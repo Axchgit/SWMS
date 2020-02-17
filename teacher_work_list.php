@@ -24,7 +24,7 @@
   include("function.php");
   $fc=new func;
 //$sql="select * from student ";
-$sql = "select * from teacher_work where tea_number=$tno";
+$sql = "select * from teacher_work where tea_number=$tno order by deadline desc";
   $result=$link->query($sql);
   
 ?>
@@ -49,7 +49,17 @@ $sql = "select * from teacher_work where tea_number=$tno";
     <td align="center"><?php echo $row['wname']?></td>
     <td align="center"><?php echo $row['course_number']?></td>
     <td align="center"><?php echo $row['tea_number']?></td>
-    <td align="center"><?php echo $row['deadline']?></td>
+    <?php ?>
+    <?php 
+            if ($row['deadline'] <= date("Y-m-d H:i:s", time())) {    
+    ?>
+    <td style="color: red;text-align:center;"><?php echo $row['deadline']?></td>
+
+    <?php }else{ ?>
+
+    <td style="color:green;text-align:center;"><?php echo $row['deadline']?></td>
+
+    <?php } ?>
 
     <td align="center"><?php echo $row['uploaddate']?></td>
 

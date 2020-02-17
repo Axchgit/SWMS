@@ -84,14 +84,26 @@
             <td align="center"><?php echo $row['year'] ?></td>
             <td align="center"><?php echo $row['term'] ?></td>
             <td align="center"><?php echo $row['department'] ?></td>
-            <td align="center"><?php echo $row['grade'] ?></td>
+            <!-- 分数外观显示判断 -->
+            <?php if ($row['grade'] == NULL) { ?>
+              <td align="center" style="color:yellowgreen;font-weight:bolder">
+                待评分
+              </td>
+            <?php } elseif ($row['grade'] >= 60) { ?>
+              <td align="center" style="color: green;font-weight:bolder">
+                <?php echo $row['grade'] ?>
+              </td>
+            <?php } else { ?>
+              <td align="center" style="color: red;font-weight:bolder">
+                <?php echo $row['grade'] ?>
+              </td>
+            <?php  } ?>
 
             <td align="center">
               <input type='checkbox' name='kec[]' value='<?php echo $row['course_number'] ?>' />
             </td>
           </tr>
         <?php
-
         }
         ?>
         <tr>

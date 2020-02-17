@@ -40,7 +40,7 @@
     where a.stu_number=b.stu_number and b.course_number=c.course_number and a.stu_number=$yh order by deadline desc";
     $result = $link->query($sql);
 
-    $sql3 = "select wname from student_work";
+    $sql3 = "select wname from student_work where stu_number = $yh";
     $data = $link->query($sql3);
     foreach ($data as $vv) :
       $wid[] = $vv['wname'];

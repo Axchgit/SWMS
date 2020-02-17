@@ -75,20 +75,36 @@ if (isset($_POST['up'])) {
 
   $cname = $v['name'];
   $tea_name = $v['teacher'];
-
+  //根据课程名称创建文件夹，存放本课程教师上传作业文件
+  $teacher_file = './files/teacher_work/' . $cname;
+  if (!is_dir($teacher_file)) {
+    mkdir($teacher_file);
+  }
   $wname = $_POST['wname'];
   $datetime = date("Y-m-d H:i:s", time());
 
   $deadline = $_POST['deadline'];
-   //		$tno = $_SESSION['yh'];
+  //		$tno = $_SESSION['yh'];
+  //根据课程及作业名创建文件夹双层目录，存放学生上传作业
+  $cname_file = './files/student_work/' . $cname;
+  if (!is_dir($cname_file)) { 
+    //is_dir():判断文件夹是否已经存在
+    mkdir($cname_file);
+  }
+  $wname_file = $cname_file . '/' . $wname;
+  if (!is_dir($wname_file)) {
+    //mkdir:创建文件夹
+    mkdir($wname_file);         
+  }
+
 
   //文件上传操作
   $arr = $_FILES['workfile'];
   $arr['tmp_name'];
   //TODO: TIP:截取 . 后面的字符
   $suffix = strrchr($arr['name'], '.');
-  $address = "./files/teacher_work/" . $cname
-    . '-' .$wname. '-' . $tea_name . $suffix;
+  $address = $teacher_file.'/' . $cname
+    . '-' . $wname . '-' . $tea_name . $suffix;
   move_uploaded_file($arr['tmp_name'], $address);
   // $address = "./files/teacher_work/" . $arr['name'];
   // move_uploaded_file($arr['tmp_name'], $address);

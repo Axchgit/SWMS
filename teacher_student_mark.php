@@ -17,7 +17,7 @@
 
     <div class="panel admin-panel">
       <div class="body-content">
-        <form method="post" class="form-x" action="">
+        <form name="myForm" onsubmit="return validateForm()" method="post" class="form-x" action="">
           <div class="form-group">            
             <div class="label">
               <label>分数：</label>
@@ -31,6 +31,16 @@
         </form>
       </div>
     </div>
+    <script>
+          function validateForm() {
+            var x = document.forms["myForm"]["grade"].value;
+            if (isNaN(x) || x < 1 || x > 100) {
+              alert("分数必须为1~100");
+              return false;
+            }
+
+          }
+        </script>
 
 </body>
 

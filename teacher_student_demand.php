@@ -37,7 +37,7 @@
 
 <body style="background:url(images/login_bg.jpg); background-repeat:no-repeat; text-align:center; background-size: 100%;">
 
-  <form method="post">
+  <!-- <form method="post"> -->
     <div class="panel admin-panel">
       <div class="panel-head"><strong class="icon-reorder">查询结果</strong></div>
       <!--    <div class="padding border-bottom">
@@ -124,7 +124,7 @@
           ?>
         </table>
     </div>
-  </form>
+  <!-- </form> -->
 
 </body>
 

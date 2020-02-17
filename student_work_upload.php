@@ -75,6 +75,9 @@ if (isset($_POST['up'])) {
   $wname = $_POST['wname'];
   // $wname = $_GET['wname'];
   $course_number = $_POST['course_number'];
+  $sql_course = "select * from course where course_number = $course_number";
+  $data_course = $link->query($sql_course);
+  $row_course = $data_course->fetch_assoc();
   // $course_number = $_GET['cno'];
   $wid = $_GET['id'];
 
@@ -86,7 +89,7 @@ if (isset($_POST['up'])) {
   $arr['tmp_name'];
   //TODO: TIP:截取 . 后面的字符
   $suffix = strrchr($arr['name'], '.');
-  $address = "./files/student_work/" . $sno
+  $address = "./files/student_work/" .$row_course['name'].'/'.$wname.'/'. $sno
     . '-' . $row_name['name'] . '-' . $wname . '-' . $wid . $suffix;
 
   move_uploaded_file($arr['tmp_name'], $address);
@@ -96,8 +99,8 @@ if (isset($_POST['up'])) {
   foreach ($data as $v);
   $sname = $v['name'];
 
-  $sql = "INSERT INTO student_work (`wname`,`stu_number`,`sname`,`course_number`,`address`,`uploaddate`)
-    VALUES ('$wname', '$sno', '$sname','$course_number', '$address', '$datetime')";
+  $sql = "INSERT INTO student_work (`twork_id`,`wname`,`stu_number`,`sname`,`course_number`,`address`,`uploaddate`)
+    VALUES ('$wid','$wname', '$sno', '$sname','$course_number', '$address', '$datetime')";
   $result = $link->query($sql);
 
   if ($link->affected_rows > 0) {
